@@ -1,0 +1,13 @@
+[properties]
+name = "base-local-blc"
+version = "0.1.0"
+edition = 2018
+authors = "AJ Jex"
+description = """
+main = "src/main.rs"
+
+[dependencies]
+
+
+[dev-dependencies]
+cargo-watch = "7.6.1"
