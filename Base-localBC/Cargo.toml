@@ -1,13 +1,7 @@
-[properties]
-name = "base-local-blc"
+[package]
+name = "base-bc"
 version = "0.1.0"
-edition = 2018
-authors = "AJ Jex"
-description = """
+edition = "2018"
+description = "test local blockchain build"
 main = "src/main.rs"
 
-[dependencies]
-
-
-[dev-dependencies]
-cargo-watch = "7.6.1"
