@@ -3,7 +3,7 @@
 mod block; // Import the block.rs module
 mod blockchain; //Imports the blockchain.rs module
 
-
+use crate::blockchain::initialize_blockchain;
 use block::Block; // Imports the block module
 
 fn main() {
