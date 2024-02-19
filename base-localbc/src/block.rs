@@ -1,12 +1,13 @@
 // In block.rs
 use chrono::{Utc, DateTime}; //imports date time data
-use crate::TIMESAMP;
+use crate::TIMESTAMP;
+use crae::block::Block;
 
 //gets timestamp in miliseconds since 1970
-pub const TIMESAMP:u64 = {
+pub const TIMESTAMP:u64 = {
     let utc: DateTime<Utc>  = Utc::now();
     utc.timestamp_millis() as u64
-};
+}
 
 
 pub struct Block {
@@ -65,12 +66,10 @@ impl Block {
 
 //static mineblock function
 
-pub fn mine_block(last_block: &Block, data:  &str) {
-    let index = 1;
+pub fn mine_block(last_block: &Block, data:  &str) -> Block {
     let timestamp = TIMESTAMP;
     let last_hash = last_block.hash();
-    //let hash = calculate_hash(&last_block.index, &timestamp, data,)
-    let hash = String::from("testhash");
+    let hash = String::from("test-hash");
 
-    Block::new(index, timestamp, data, last_hash, hash);
+    Block::new(timestamp, data.to_string(), last_hash.to_string(), hash);
 }
