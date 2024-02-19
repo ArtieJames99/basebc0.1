@@ -14,11 +14,17 @@ pub struct Blockchain {
 
 //Implements the function of the blockchain
 impl Blockchain {
-
     // Adds a new block to the end of the blockchain if it can be validly
-    pub fn add_block(&mut self, block: Block) {
-        self.block.push(block);
-}
+    pub fn add_block(&mut self, data: &str) {
+        //get last block in blockchain
+        let last_block = self.block.last().unwrap();// Assuming block before
+
+        // Mine a new block with provided data
+        let new_block = mine_block(last_block, data)
+
+        //add the new block to the blockchain
+        self.block.push(new_block);
+    }
 
     pub fn initialize_blockchain() -> Self {
         // Create the genesis block
@@ -27,8 +33,8 @@ impl Blockchain {
         // Initialize the blockchain with the genesis block
         let mut blockchain = Vec::new(){
             blockchain.push(genesis_block);
-                    
-        // Return the initialized blockchain explicitly
+
+         // Return the initialized blockchain explicitly
         blockchain
     }
 
@@ -41,5 +47,6 @@ impl Blockchain {
     //iterate over blocks in the blockchain
     pub fn iter_blocks(&self) -> std::slice::Iter<'_, Block> {
         self.block.iter()
+        }
     }
 }

@@ -33,7 +33,7 @@ fn main() {
   blockchain.add_block(data);
 
   // Print out the blockchain for demonstration
-  println!("Blockchain:")
+  println!("Blockchain");
   for block in blockchain.iter_blocks() {
      println!("index: {}", block.index());
      println!("timestamp: {}", block.timestamp());
