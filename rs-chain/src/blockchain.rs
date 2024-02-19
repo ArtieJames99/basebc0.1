@@ -14,16 +14,11 @@ pub struct Blockchain {
 
 //Implements the function of the blockchain
 impl Blockchain {
-//    pub fn new() -> Self {
-//        Blockchain {
-//            block: Vec::new(),
-//        }
-//    }
 
     // Adds a new block to the end of the blockchain if it can be validly
     pub fn add_block(&mut self, data: &str) {
-        let last_block = self.block.last().expect( "No blocks in this blockchain!" );
-        let new_block = mine_block (last_block, data);
+        let previous_hash = self.block.last().map_or("0".to_string*(), |block| block.hash().to_string());
+        let new_block = Block::new(data.to_string(), previous_hash);
         self.block.push(new_block);
 }
 
@@ -33,7 +28,7 @@ impl Blockchain {
         
         // Initialize the blockchain with the genesis block
         let mut blockchain = Blockchain {
-            block Vec::new(),
+            block: Vec::new(),
         };
 
         blockchain.add_block(genesis_block); // Add the genesis block to the blockchain

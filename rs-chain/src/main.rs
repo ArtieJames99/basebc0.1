@@ -31,13 +31,13 @@ fn main() {
   blockchain.add_block("Transaction data for the new block");
 
   // Print out the blockchain for demonstration
-  for block in &blockchain.blocks {
+  for block in &blockchain.block {
      println!("index: {}", block.index());
      println!("timestamp: {}", block.timestamp());
      println!("data: {}", block.data());
      println!("prev hash: {}", block.previous_hash());
      print!("hash: {}\n\n", block.hash());
-     printls!();
+     println!();
   }
 
 }
