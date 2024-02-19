@@ -16,7 +16,7 @@ pub struct Blockchain {
 impl Blockchain {
     pub fn new() -> Self {
         Blockchain {
-            blocks: Vec::new(),
+            block: Vec::new(),
         }
     }
 

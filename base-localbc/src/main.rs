@@ -4,7 +4,7 @@ mod block; // Import the block.rs module
 mod blockchain; //Imports the blockchain.rs module
 
 use block::Block; // Imports the block module
-use blockchain::Blockchain
+use blockchain::Blockchain;
 
 fn main() {
     // Initializes the block chain
@@ -24,7 +24,7 @@ fn main() {
   //      println!("No genesis block found.");
   //  }
 
-  let mut blockcahin = Blockchain::new();
+  let mut blockchain = Blockchain::new();
   blockchain.add_block("Transaction data for the new block")
 
 }
