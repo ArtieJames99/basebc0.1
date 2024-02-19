@@ -18,7 +18,7 @@ pub struct Block {
 }
 
 // Hashing  function that takes string input and returns a SHA-256 Hexadecimal string
-pub fn hash(timestamp: u64, last_hash: &str, data: &str) {
+pub fn hash(timestamp: u64, last_hash: &str, data: &str) -> String {
     // Concatenate the timestamp lasthash, and data into a single string
     let concatenated_string = format! {"{}{}{}", timestamp, last_hash, data};
     
