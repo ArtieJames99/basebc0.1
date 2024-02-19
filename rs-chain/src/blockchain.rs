@@ -20,33 +20,27 @@ impl Blockchain {
        self.block.iter()
     }
 
-    // Adds a new block to the end of the blockchain if it can be validly
-    pub fn add_block(&mut self, data: &str) {
-        //get last block in blockchain
-        let last_block = self.block.last().unwrap();// Assuming block before
-
-        // Mine a new block with provided data
-        let new_block = mine_block(last_block, data);
-
-        //add the new block to the blockchain
-        self.block.push(new_block);
-    }
-
+        // Initialize the blockchain with the genesis block
     pub fn initialize_blockchain() -> Self {
         // Create the genesis block
-        let genesis_block = Block::genesis();
-        
-        // Initialize the blockchain with the genesis block
-        let mut blockchain = Vec::new();
-        blockchain.push(genesis_block);
-
-         // Return the initialized blockchain explicitly
+        let genesis_block = Block::genesis();    
+        Blockchain {
+            block: vec![genesis_block],
+        }
+        // Return the initialized blockchain explicitly
         blockchain
+    }
+
+    // Adds a new block to the end of the blockchain if it can be validly
+    pub fn add_block(&mut self, data: &str) {
+        let last_block = self.block.last().unwrap(); //get last block in blockchain
+        let new_block = mine_block(last_block, data); // Mine a new block with provided data
+        self.block.push(new_block); //add the new block to the blockchain
+    }
 
         // Function returns the genesis block  (the first block in the blockchain)
-        pub fn get_genesis_block(&self) -> Option<&Block> {
-            // If blockchain not empty, return a reference of the first block
-            self.block.first()
-        }
+    pub fn get_genesis_block(&self) -> Option<&Block> {
+        // If blockchain not empty, return a reference of the first block
+        self.block.first()
     }
 }
