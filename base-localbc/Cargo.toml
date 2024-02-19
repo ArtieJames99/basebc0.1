@@ -1,9 +1,0 @@
-[package]
-name = "base-bc"
-version = "0.1.0"
-edition = "2018"
-description = "test local blockchain build"
-main = "src/main.rs"
-
-[dependencies]
-chrono = "0.4.19"
