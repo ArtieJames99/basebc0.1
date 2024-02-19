@@ -6,7 +6,9 @@ use crate::block::mine_block; //Import the mine_block function from the block.rs
 //Genesis block is the starting block of the block chain with no previous hash value
 //Put in place as the beginning of the blockchain to provide a link for all future blocks
 
-
+pub struct Blockchain {
+    blocks: Vec<Block>,  //Vec to hold the list of blocks on the blockchain
+}
 
 
 
@@ -14,7 +16,7 @@ use crate::block::mine_block; //Import the mine_block function from the block.rs
 impl Blockchain {
     pub fn new() -> Self {
         Blockchain {
-            blocks: Vec::new();
+            blocks: Vec::new(),
         }
     }
 

@@ -1,13 +1,12 @@
 // In block.rs
 use chrono::{Utc, DateTime}; //imports date time data
-use crate::TIMESTAMP;
-use crae::block::Block;
+use crate::block::Block;
 
 //gets timestamp in miliseconds since 1970
 pub const TIMESTAMP:u64 = {
     let utc: DateTime<Utc>  = Utc::now();
     utc.timestamp_millis() as u64
-}
+};
 
 
 pub struct Block {
