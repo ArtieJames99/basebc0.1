@@ -42,5 +42,4 @@ fn main() {
      print!("hash: {}\n\n", block.hash());
      println!();
   }
-
 }
