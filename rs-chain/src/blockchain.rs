@@ -36,9 +36,9 @@ impl Blockchain {
     }
 
     // Function returns the genesis block  (the first block in the blockchain)
-    pub fn get_genesis_block(blockchain: &[Block]) -> Option<&Block> {
+    pub fn get_genesis_block(&self) -> Option<&Block> {
         // If blockchain not empty, return a reference of the first block
-        blockchain.first()
+        self.block.first()
     }
 
     //iterate over blocks in the blockchain
