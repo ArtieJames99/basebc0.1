@@ -16,10 +16,8 @@ pub struct Blockchain {
 impl Blockchain {
 
     // Adds a new block to the end of the blockchain if it can be validly
-    pub fn add_block(&mut self, data: &str) {
-        let previous_hash = self.block.last().map_or("0".to_string*(), |block| block.hash().to_string());
-        let new_block = Block::new(data.to_string(), previous_hash);
-        self.block.push(new_block);
+    pub fn add_block(&mut self, block: Block) {
+        self.block.push(block);
 }
 
     pub fn initialize_blockchain() -> Self {
