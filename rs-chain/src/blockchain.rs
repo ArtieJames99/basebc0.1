@@ -7,7 +7,7 @@ use crate::block::mine_block; //Import the mine_block function from the block.rs
 //Put in place as the beginning of the blockchain to provide a link for all future blocks
 
 pub struct Blockchain {
-    blocks: Vec<Block>,  //Vec to hold the list of blocks on the blockchain
+    block: Vec<Block>,  //Vec to hold the list of blocks on the blockchain
 }
 
 
