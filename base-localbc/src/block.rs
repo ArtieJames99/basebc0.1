@@ -59,11 +59,11 @@ impl Block {
 
 //static mineblock function
 
-pub fn mineBlock(last_block: &Block, data:  &str) {
+pub fn mine_block(last_block: &Block, data:  &str) {
     let timestamp = TIMESAMP;
     let last_hash = last_block.hash();
     //let hash = calculate_hash(&last_block.index, &timestamp, data,)
-    let hash = String::from("f1r57-h45h")
+    let hash = String::from("testhash");
 
     Block::new(index,timestamp,data, last_hash, hash);
 }

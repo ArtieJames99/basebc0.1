@@ -34,17 +34,10 @@ fn main() {
     }
 
     // Create a new block and add it to the blockchain
-    let fooBlock = Block.mine_block(Block.genesis(), "foo"); {
-        println!("fooblock:");
-        println!("Index: {}", foo_block.index());
-        println!("Timestamp: {}", foo_block.timestamp());
-        println!("Data: {}", foo_block.data());
-        println!("Previous Hash: {}", foo_block.previous_hash());
-        println!("Hash: {}", foo_block.hash());
-    } else {
-        println!("No foo_block  found.");
+    let new_block = blocks::mine_block(last_block, &data);
+
+    //prints information about blockchain
+    for block in &blockchain {
+        printin!("{:?}", block);
     }
-}
-
-
 }
