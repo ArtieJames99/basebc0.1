@@ -25,12 +25,9 @@ impl Blockchain {
         let genesis_block = Block::genesis();
         
         // Initialize the blockchain with the genesis block
-        let mut blockchain = Blockchain {
-            block: Vec::new(),
-        };
-
-        blockchain.add_block(genesis_block); // Add the genesis block to the blockchain
-        
+        let mut blockchain = Vec::new(){
+            blockchain.push(genesis_block);
+                    
         // Return the initialized blockchain explicitly
         blockchain
     }

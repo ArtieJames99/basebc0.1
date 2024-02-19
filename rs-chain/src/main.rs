@@ -26,8 +26,7 @@ fn main() {
 
   // Initialize the blockchain with the genesis block
   let mut blockchain = Blockchain::initialize_blockchain();
-  
-  let genesis_block = Blockchain.get_genesis_block().expect("No Genesis block found").clone();
+  let genesis_block = blockchain.get_genesis_block().expect("No Genesis block found").clone();
 
   // Add a new block to the blockchain
   blockchain.add_block(genesis_block);
