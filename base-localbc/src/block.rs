@@ -66,9 +66,10 @@ impl Block {
 //static mineblock function
 
 pub fn mine_block(last_block: &Block, data:  &str) -> Block {
+    let index = 1;
     let timestamp = TIMESTAMP;
     let last_hash = last_block.hash();
     let hash = String::from("test-hash");
 
-    Block::new(timestamp, data.to_string(), last_hash.to_string(), hash);
+    Block::new(index, timestamp, data.to_string(), last_hash.to_string(), hash);
 }
