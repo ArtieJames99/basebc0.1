@@ -1,5 +1,6 @@
 // In block.rs
 use chrono::{Utc, DateTime}; //imports date time data
+use sha2::{Sha256, Digest}; //import the hashing algorithm
 
 //gets timestamp in miliseconds since 1970
 pub fn initialize_timestamp() -> u64  {
@@ -60,15 +61,15 @@ impl Block {
         Block::new(index, timestamp, data, previous_hash, hash)
     }
     //genesis block ends here
-}
 
-//static mineblock function
 
-pub fn mine_block(last_block: &Block, data:  &str) -> Block {
-    let index = 1;
-    let timestamp = initialize_timestamp();
-    let last_hash = last_block.hash();
-    let hash = String::from("test-hash");
+    //static mineblock function
+    pub fn mine_block(last_block: &Block, data:  &str) -> Block {
+        let index = 1;
+        let timestamp = initialize_timestamp();
+        let last_hash = last_block.hash();
+        let hash = String::from("test-hash");
 
-    Block::new(index, timestamp, data.to_string(), last_hash.to_string(), hash)
+        Block::new(index, timestamp, data.to_string(), last_hash.to_string(), hash)
+    }
 }
