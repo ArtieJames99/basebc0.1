@@ -27,13 +27,13 @@ fn main() {
   // Initialize the blockchain with the genesis block
   let mut blockchain = Blockchain::initialize_blockchain();
   
-  let genesis_block = Blockchian::get_genesis_block(&blockchain).expect("No Genesis block found");
+  let genesis_block = Blockchain::get_genesis_block(&blockchain).expect("No Genesis block found");
 
   // Add a new block to the blockchain
   blockchain.add_block(genesis_block);
 
   // Print out the blockchain for demonstration
-  for block in &blockchain.block {
+  for block in blockchain.iter_blocks {
      println!("index: {}", block.index());
      println!("timestamp: {}", block.timestamp());
      println!("data: {}", block.data());

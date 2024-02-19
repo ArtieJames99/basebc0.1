@@ -41,5 +41,8 @@ impl Blockchain {
         blockchain.first()
     }
 
-
+    //iterate over blocks in the blockchain
+    pub fn iter_blocks(&self) -> std::slice::Iter<'_, Block> {
+        self.block.iter()
+    }
 }
