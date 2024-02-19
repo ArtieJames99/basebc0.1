@@ -52,7 +52,7 @@ impl Block {
     pub fn genesis() -> Self {
         // Define genesis properties
         let index = 0;
-        let timestamp = 1234567890; // Example timestamp (replace with your actual timestamp)
+        let timestamp = initialize_timestamp(); 
         let data = String::from("Genesis Block - Created by AJ Jex");
         let previous_hash = String::from("0").repeat(64); // Assuming a 64-character hash
         let hash = String::from("f1r57-h45h"); // First hash in the blockchain

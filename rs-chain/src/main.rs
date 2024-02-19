@@ -24,7 +24,20 @@ fn main() {
   //      println!("No genesis block found.");
   //  }
 
-  let mut blockchain = Blockchain::new();
-  blockchain.add_block("Transaction data for the new block")
+  // Initialize the blockchain with the genesis block
+  let mut blockchain = Blockchain::initialize_blockchain();
+  
+  // Add a new block to the blockchain
+  blockchain.add_block("Transaction data for the new block");
+
+  // Print out the blockchain for demonstration
+  for block in &blockchain.blocks {
+     println!("index: {}", block.index());
+     println!("timestamp: {}", block.timestamp());
+     println!("data: {}", block.data());
+     println!("prev hash: {}", block.previous_hash());
+     print!("hash: {}\n\n", block.hash());
+     printls!();
+  }
 
 }
