@@ -8,6 +8,11 @@ use crate::block::mine_block; //Import the mine_block function from the block.rs
 
 pub struct Blockchain {
     block: Vec<Block>,  //Vec to hold the list of blocks on the blockchain
+        
+    //iterate over blocks in the blockchain
+    pub fn iter_blocks(&self) -> std::slice::Iter<'_, Block> {
+        self.block.iter()
+    }
 }
 
 
@@ -20,7 +25,7 @@ impl Blockchain {
         let last_block = self.block.last().unwrap();// Assuming block before
 
         // Mine a new block with provided data
-        let new_block = mine_block(last_block, data)
+        let new_block = mine_block(last_block, data);
 
         //add the new block to the blockchain
         self.block.push(new_block);
@@ -31,22 +36,18 @@ impl Blockchain {
         let genesis_block = Block::genesis();
         
         // Initialize the blockchain with the genesis block
-        let mut blockchain = Vec::new(){
+        let mut blockchain = Vec::new() {
             blockchain.push(genesis_block);
 
          // Return the initialized blockchain explicitly
         blockchain
-    }
-
-    // Function returns the genesis block  (the first block in the blockchain)
-    pub fn get_genesis_block(&self) -> Option<&Block> {
-        // If blockchain not empty, return a reference of the first block
-        self.block.first()
-    }
-
-    //iterate over blocks in the blockchain
-    pub fn iter_blocks(&self) -> std::slice::Iter<'_, Block> {
-        self.block.iter()
         }
+
+        // Function returns the genesis block  (the first block in the blockchain)
+        pub fn get_genesis_block(&self) -> Option<&Block> {
+            // If blockchain not empty, return a reference of the first block
+            self.block.first()
+        }
+
     }
 }
