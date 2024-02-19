@@ -27,8 +27,6 @@ impl Blockchain {
         Blockchain {
             block: vec![genesis_block],
         }
-        // Return the initialized blockchain explicitly
-        blockchain
     }
 
     // Adds a new block to the end of the blockchain if it can be validly
