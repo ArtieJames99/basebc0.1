@@ -1,4 +1,7 @@
 // In block.rs
+use crate::main::TIMESTAMP; //IMPORT TIMESTAMP const from main.rs
+
+
 
 pub struct Block {
     index: u32,
@@ -19,7 +22,8 @@ impl Block {
             hash,
         }
     }
-
+    
+    // Below sets the presets for the genesis block
     pub fn index(&self) -> u32 {
         self.index
     }
@@ -50,4 +54,16 @@ impl Block {
 
         Block::new(index, timestamp, data, previous_hash, hash)
     }
+    //genesis block ends here
+}
+
+//static mineblock function
+
+pub fn mineBlock(last_block: &Block, data:  &str) {
+    let timestamp = TIMESAMP;
+    let last_hash = last_block.hash();
+    //let hash = calculate_hash(&last_block.index, &timestamp, data,)
+    let hash = String::from("f1r57-h45h")
+
+    Block::new(index,timestamp,data, last_hash, hash);
 }

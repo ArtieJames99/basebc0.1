@@ -1,5 +1,7 @@
 // blockchain.rs
 
+// blockchain.rs
+
 use crate::block::Block; //Import the Block structure from the block.rs module
 
 //Genesis block is the starting block of the block chain with no previous hash value

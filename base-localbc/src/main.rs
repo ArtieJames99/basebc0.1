@@ -6,6 +6,14 @@ mod blockchain; //Imports the blockchain.rs module
 use crate::blockchain::get_genesis_block;
 use crate::blockchain::initialize_blockchain;
 use block::Block; // Imports the block module
+use chrono::{Utc, TimeZone}; //imports date time data
+
+
+//gets timestamp in miliseconds since 1970
+pub const TIMESAMP:u64 = {
+    let utc: DateTime<Utc>  = Utc::now();
+    utc.timestamp_millis() as u64
+};
 
 fn main() {
     // Initializes the block chain
@@ -24,4 +32,19 @@ fn main() {
     } else {
         println!("No genesis block found.");
     }
+
+    // Create a new block and add it to the blockchain
+    let fooBlock = Block.mine_block(Block.genesis(), "foo"); {
+        println!("fooblock:");
+        println!("Index: {}", foo_block.index());
+        println!("Timestamp: {}", foo_block.timestamp());
+        println!("Data: {}", foo_block.data());
+        println!("Previous Hash: {}", foo_block.previous_hash());
+        println!("Hash: {}", foo_block.hash());
+    } else {
+        println!("No foo_block  found.");
+    }
+}
+
+
 }
