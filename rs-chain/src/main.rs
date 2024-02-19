@@ -26,12 +26,14 @@ fn main() {
 
   // Initialize the blockchain with the genesis block
   let mut blockchain = Blockchain::initialize_blockchain();
-  let genesis_block = blockchain.get_genesis_block().expect("No Genesis block found").clone();
 
+  //Example: adds new block of transaction data
+  let data = "Transaction Data for the new block";
   // Add a new block to the blockchain
-  blockchain.add_block(genesis_block);
+  blockchain.add_block(data);
 
   // Print out the blockchain for demonstration
+  println!("Blockchain:")
   for block in blockchain.iter_blocks() {
      println!("index: {}", block.index());
      println!("timestamp: {}", block.timestamp());
